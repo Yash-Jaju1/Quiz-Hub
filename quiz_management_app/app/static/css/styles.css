@@ -1,0 +1,63 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #343a40 !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+/* Card Styles */
+.card {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Alert Styles */
+.alert {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: calc(var(--score) * 1%);
+}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Quizzes Pending Approval</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Questions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quiz in pending_quizzes %}
+            <tr>
+                <td>{{ quiz.title }}</td>
+                <td>{{ quiz.author.username }}</td>
+                <td>{{ quiz.questions|length }}</td>
+                <td>
+                    <a href="{{ url_for('review_quiz', quiz_id=quiz.id) }}" class="btn btn-sm btn-info">Review</a>
+                    <form method="POST" action="{{ url_for('approve_quiz', quiz_id=quiz.id) }}" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                    </form>
+                    <form method="POST" action="{{ url_for('reject_quiz', quiz_id=quiz.id) }}" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-danger">Reject</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
