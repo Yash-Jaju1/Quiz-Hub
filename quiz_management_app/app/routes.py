@@ -236,3 +236,12 @@ def init_app(app, database):
             abort(403)
         users = User.query.order_by(User.username).all()
         return render_template('admin/manage_users.html', users=users)
+
+    @app.route('/admin/approve-quizzes')
+    @login_required
+    def approve_quizzes():
+        if current_user.role != 'admin':
+            abort(403)
+        
+        quizzes = Quiz.query.filter_by(is_published=False).all()  # Fetch unapproved quizzes
+        return render_template('admin/approve_quizzes.html', quizzes=quizzes)
