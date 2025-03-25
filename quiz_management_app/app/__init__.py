@@ -14,7 +14,7 @@ login_manager = LoginManager()
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E:/quiz_management_app/app/data/quiz_app.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app/data/quiz_app.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config.from_object('config.Config')
     
